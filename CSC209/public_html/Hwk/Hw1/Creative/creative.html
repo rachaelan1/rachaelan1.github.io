@@ -1,3 +1,114 @@
-<h1>My Student Dashboard</h1>
-<h2>Time spent: ...</h2>
+<head>
+        <title>Task Completed Button</title>
+        <script>
+            function markCompleted(button) {
+                button.innerHTML = "Complete";
+                button.style.backgroundColor = "green";
+                button.style.color = "white";
+                button.disabled = false;
+            }
+        </script>
+</head>
 
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+
+<h1>My Student Dashboard</h1>
+<h2>Time spent: 1 hour</h2>
+
+<p>This dashboard provides access to essential resources for assignments, displays my Spring 2025 class schedule, lists upcoming assignments with deadlines and completion buttons, and includes my email for any questions.</p>
+
+<h2 style="color:rgb(211, 125, 211);">Resources</h2>
+
+<b style="color:rgba(7, 58, 153, 0.685);">Smith College Website</b>
+<br>
+<b><q style="color:rgba(238, 184, 37, 0.938);">Knowledge. Community. Generosity.</q></b>
+<br>
+
+<a href="https://www.smith.edu">
+    <img src="smith_logo.png" alt="Smith College Logo" style="width:100px;height:100px;">
+</a>
+<br>
+<a href="https://moodle.smith.edu/">Moodle</a>
+<br>
+<a href="https://calendar.google.com/calendar/u/0/r/week">Google Calendar</a>
+<br>
+<a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a>
+<br>
+<a href="https://drive.google.com/drive/u/0/home">Google Drive</a>
+<br>
+<a href="https://workday.smith.edu">Workday</a>
+<br>
+<a href="https://www.smith.edu/academics/academic-calendar">Academic Calendar</a>
+
+<br>
+<br>
+
+<h2 style="color:rgb(211, 125, 211);">Class Schedule</h2>
+
+<table>
+        <tr>
+          <th>Course Name</th>
+          <th>Meeting Patterns</th>
+          <th>Room</th>
+          <th>Instructor</th>
+        </tr>
+        <tr>
+          <td>SDS 390cd - Categorical Data</td>
+          <td>Monday/Wednesday 10:50AM - 12:05PM</td>
+          <td>McConnell 403</td>
+          <td>Kementari Whitcher</td>
+        </tr>
+        <tr>
+            <td>ESS 940rc - Rock Climbing</td>
+            <td>Tuesday 9:25AM - 11:40AM</td>
+            <td>Ainsworth 304</td>
+            <td>Scott Johnson</td>
+        </tr>
+        <tr>
+            <td>SDS 236 - Data Journalism</td>
+            <td>Tuesday/Thursday 1:20PM - 2:35PM</td>
+            <td>Bass 204</td>
+            <td>Ben Baumer/Naila F. Moreira</td>
+        </tr>
+        <tr>
+            <td>THE 200 - Theatre Production</td>
+            <td>Friday 1:30PM - 3:30PM + 2 weekly lab hours</td>
+            <td>Scene Shop</td>
+            <td>Nikki Beck</td>
+        </tr>
+        <tr>
+            <td>CSC 209 - Web Programming</td>
+            <td>Wednesday 1:20PM - 4:00PM</td>
+            <td>Sabin-Reed 220</td>
+            <td>Illeanu Streinu</td>
+        </tr>
+</table>
+
+<h2 style="color:rgb(211, 125, 211);">Upcoming Assignments</h2>
+<ul>
+    <li>SDS 236 - Data Journalism
+            <ul>
+                <li>Deepwater Horizon Quant Writing Questionnaire (due Mon. 2/3 11:59PM) <button onclick="markCompleted(this)">Mark as Completed</button></li>
+                <li>Idea List with Datasets (due Thurs. 2/6) <button onclick="markCompleted(this)">Mark as Completed</button></li>
+                <li>Weekly Newsreading Assignment (due Mon. 2/10 11:59PM) <button onclick="markCompleted(this)">Mark as Completed</button></li>
+            </ul>
+    </li>
+    <li>CSC 209 - Web Programming
+        <ul>
+            <li>HW 1 (due Tues. 2/4 11:59PM) <button onclick="markCompleted(this)">Mark as Completed</button></li>
+        </ul>
+    </li>
+    <li>Miscellaneous
+        <ul>
+            <li>Sign THE 200 Contract (due Fri. 2/7) <button onclick="markCompleted(this)">Mark as Completed</button></li>
+            <li>Purchase Graduation Gown <button onclick="markCompleted(this)">Mark as Completed</button></li>
+        </ul>
+    </li>
+</ul>
+
+<h2 style="color:rgb(211, 125, 211);">Contact Me</h2>
+<a href="mailto:ran@smith.edu">Send me an email!</a>
