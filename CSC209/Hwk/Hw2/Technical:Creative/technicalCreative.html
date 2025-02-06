@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/darkMode.css">
+    <link rel="stylesheet" href="css/lightMode.css">
+</head>
+
+<body>
+
+        <ul>
+          <li><a href="https://beanumber.github.io/sds236/">SDS 236</a></li>
+          <li><a href="https://beanumber.github.io/sds236/baumer.html">Ben Baumer</a></li>
+          <li><a href="https://beanumber.github.io/sds236/moreira.html">Naila Moreira</a></li>
+          <li><a href="https://rachaelan1.github.io/CSC209/Hwk/Hw2/Technical:Creative/technicalCreative.html" class = "active" href="#home">Home</a></li>
+          <li><a href="https://beanumber.github.io/sds236/syllabus.html">Syllabus</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1jMEjOtQ4cRaqzKolqcmfSiuG9C5OOm_N">Lectures</a></li>
+          <li><a href="https://beanumber.github.io/sds236/readings.html">Readings</a></li>
+          <li><a href="https://beanumber.github.io/sds236/hw_deepwater.html">Assignments</a></li>
+          <li><a href="mailto:bbaumer@smith.edu">Send Email!</a></li>
+        </ul>
+        
+        <div>
+            <br>
+            <img src="images/smithCollegeLogo.png" alt="Smith College Logo" width=600px>    
+            <h2>SDS 236 - Data Journalism</h2>
+            <h3>Spring 2025</h3>
+            <button type="button" onclick="toggleText()" id="toggleButton" style="margin-bottom: 20px;">Read Me!</button>
+            <br>
+    
+            <p id="demo" style="display: none;">Time spent: ...</p> <!-- Initially hidden -->
+        
+            <script>
+                function toggleText() { 
+                    var demoText = document.getElementById("demo");
+                    var button = document.getElementById("toggleButton");
+        
+                    if (demoText.style.display === "none") {
+                        demoText.style.display = "block"; // Show the text
+                        button.innerHTML = "Hide"; // Change button text
+                    } else {
+                        demoText.style.display = "none"; // Hide the text
+                        button.innerHTML = "Read Me!"; // Change button text back
+                    }
+                }
+            </script>
+            <table style="table-layout: fixed; width:80%">
+            <caption>Class Schedule</caption>
+            <tr>
+                <th style="width:7%">Week</th>
+                <th style="width:10%">Date</th>
+                <th>Lecture</th>
+                <th>Topic</th>
+                <th>Homework</th>
+            </tr>
+            <tr>
+                <td rowspan="2">1</td>
+                <td>Tues. 1/28</td>
+                <td><a href="html/01newsworthy.html" target="_blank">What's Data Journalism? What's Newsworthy?</a></td>
+                <td>Course Overview<br>Resources<br>What's Newsworthy?</td>
+                <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSf0-kORNBFU2S3zqqjPZyciXSyqigTumEu3_7yYtyoQCCrk0w/viewform?fbzx=-7273007132706352392" target = "_blank">Course Questionnaire</a></td>
+            </tr>
+            <tr>
+                <td>Thurs. 1/30</td>
+                <td><a href="html/dataReportingWithTheShoestring.html" target="_blank">Data Reporting with the Shoestring</a><br><a href="html/02dataSources.html" target="_blank">Data Sources</a></td>
+                <td>Guest Speaker Dusty Christensen<br>Local Journalism<br>Introduce Data Sources</td>
+                <td><a href="https://theshoestring.org/2024/08/13/trespassing-charges-create-dragnet-in-holyoke-public-defenders-say/" target="_blank">Trespassing Charges Create &ldquo;Dragnet&ldquo; in Holyoke, Public Defenders Say</a></td>
+            </tr>
+            <tr>
+                <td rowspan = "2">2</td>
+                <td>Tues. 2/4</td>
+                <td><a href="html/03numbers.html" target="_blank">Newswriting with Numbers</a></td>
+                <td>Deepwater Horizon Disaster<br>Effective Writing with Numbers</td>
+                <td>Deepwater Horizon Quant Writing Questionnaire<br><a href="https://drive.google.com/drive/folders/1JhcEdfLzKj1Nwq4Zmrj1FaSUW3Ilvp70" target="_blank">Ten Years Later, BP Oil Spill Continues to Harm Wildlife --Especially Dolphins</a></td>
+            </tr>
+            <tr>
+                <td>Thurs. 2/6</td>
+                <td></td>
+                <td>Journalistic Style<br>Assign 1 Number Story</td>
+                <td>Idea List with Datasets</td>
+            </tr>
+            </table>
+
+            <button type="button" onclick="toggleMode()" id="modeButton" style="margin-top: 20px;">Toggle Dark Mode</button>
+
+            <script>
+                function toggleMode() { 
+                    var element = document.body;
+                    var button = document.getElementById("modeButton");
+        
+                    // Toggle between dark and light mode
+                    if (element.classList.contains("dark-mode")) {
+                        element.classList.remove("dark-mode");
+                        element.classList.add("light-mode");
+                        button.innerHTML = "Toggle to Dark Mode";  // Change button text to indicate dark mode
+                    } else {
+                        element.classList.remove("light-mode");
+                        element.classList.add("dark-mode");
+                        button.innerHTML = "Toggle to Light Mode";  // Change button text to indicate light mode
+                    }
+                }
+            </script>
+        </div>
+
+</body>
