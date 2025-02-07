@@ -1,6 +1,6 @@
 body {
     margin: 0;
-  }
+}
   
 ul {
     list-style-type: none;
@@ -75,3 +75,13 @@ th, td {
 th {
     background-color: gold;
 }
+
+#myHeader {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding:40px;
+    border: 6px dashed black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #003366;
+} 
