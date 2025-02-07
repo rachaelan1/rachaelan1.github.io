@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+  margin: 0;
+  background-color:powderblue;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+p {
+  text-align:center;
+  font-size:130%;
+}
+
+div.gallery {
+  border: 1px solid black;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  font-family:verdana;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header" style="font-family:verdana;">
+    <h1>Madrid</h1>
+    <p>Madrid, the capital of Spain, is home to over 3.4 million residents. Known for its rich history and vibrant culture, the city is also famous for its legendary football club, Real Madrid. Some of its most iconic attractions include Plaza Mayor, the Royal Palace of Madrid, Buen Retiro Park, the Prado Museum, and the Reina Sofia Museum.</p>
+</div>
+
+<div class="row" style="text-align:center;font-family:verdana;font-size:100%;margin-top:40px;">
+
+  <a href="https://rachaelan1.github.io/CSC209/Hwk/Hw2/Creative/creative.html">Back to Home</a>
+  <br>
+
+  <div class="responsive">
+    <div class="gallery" style="margin-top:40px;">
+        <a target="_blank" href="images/plazaMayor.png">
+          <img src="images/plazaMayor.png" alt="Plaza Mayor" width="600" height="400">
+        </a>
+        <div class="desc">Plaza Mayor</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+      <div class="gallery" style="margin-top:40px;">
+        <a target="_blank" href="images/buenRetiroPark.png">
+          <img src="images/buenRetiroPark.png" alt="Buen Retiro Park" width="600" height="400">
+        </a>
+        <div class="desc">Buen Retiro Park</div>
+      </div>
+  </div>
+
+  <div class="responsive">
+      <div class="gallery" style="margin-top:40px;">
+        <a target="_blank" href="images/pradoMuseum.png">
+          <img src="images/pradoMuseum.png" alt="Prado Museum" width="600" height="400">
+        </a>
+        <div class="desc">Prado Museum</div>
+      </div>
+  </div>
+
+  <div class="responsive">
+      <div class="gallery" style="margin-top:40px;">
+        <a target="_blank" href="images/reinaSofiaMuseum.png">
+          <img src="images/reinaSofiaMuseum.png" alt="Reina Sofia Museum" width="600" height="400">
+        </a>
+        <div class="desc">Reina Sofia Museum</div>
+      </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+</div>
+
+</body>
+</html>
