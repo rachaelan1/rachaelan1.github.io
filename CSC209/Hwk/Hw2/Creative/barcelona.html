@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+  margin: 0;
+  background-color:powderblue;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+p {
+  text-align:center;
+  font-size:130%;
+}
+
+div.gallery {
+  border: 1px solid black;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  font-family:verdana;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header" style="font-family:verdana;">
+    <h1>Barcelona</h1>
+    <p>Barcelona, Spain's second-most populous city, is home to over 6.9 million residents. As a major cultural and economic hub of Europe, it has hosted the Summer Olympics and numerous international sports tournaments. The city is renowned for its architectural wonders, including Park Guell, Casa Batllo, and the Basilica de la Sagrada Familia --UNESCO World Heritage Sites --along with Casa Mila, the Arc de Triomf, and Barceloneta Beach.</p>
+</div>
+
+<div class="row" style="text-align:center;font-family:verdana;font-size:100%;margin-top:40px;">
+
+  <a href="https://rachaelan1.github.io/CSC209/Hwk/Hw2/Creative/creative.html">Back to Home</a>
+  <br>
+
+  <div class="responsive">
+    <div class="gallery" style="margin-top:40px;">
+        <a target="_blank" href="images/parkGuell.png">
+          <img src="images/parkGuell.png" alt="Park Guell" width="600" height="400">
+        </a>
+        <div class="desc">Park Guell</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+      <div class="gallery" style="margin-top:40px;">
+        <a target="_blank" href="images/sagradaFamilia.png">
+          <img src="images/sagradaFamilia.png" alt="Basilica de la Sagrada Familia" width="600" height="400">
+        </a>
+        <div class="desc">Basilica de la Sagrada Familia</div>
+      </div>
+  </div>
+
+  <div class="responsive">
+      <div class="gallery" style="margin-top:40px;">
+        <a target="_blank" href="images/arcDeTriomf.png">
+          <img src="images/arcDeTriomf.png" alt="Arc De Triomf" width="600" height="400">
+        </a>
+        <div class="desc">Arc De Triomf</div>
+      </div>
+  </div>
+
+  <div class="responsive">
+      <div class="gallery" style="margin-top:40px;">
+        <a target="_blank" href="images/barcelonetaBeach.png">
+          <img src="images/barcelonetaBeach.png" alt="Barceloneta Beach" width="600" height="400">
+        </a>
+        <div class="desc">Barceloneta Beach</div>
+      </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+</div>
+
+</body>
+</html>
