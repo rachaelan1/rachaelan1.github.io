@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Creating Javascript Arrays</h1>
+
+<h2>Changing an Array Element</h2>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+
+<script>
+
+const cars = ["Saab", "Volvo", "BMW"];
+
+document.getElementById("demo1").innerHTML = cars;
+
+document.getElementById("demo2").innerHTML = "The first element is: " + cars[0];
+
+cars[0] = "Opel";
+
+document.getElementById("demo3").innerHTML = "After changing the first element, it is now: " + cars[0];
+
+</script>
+
+</body>
+</html>

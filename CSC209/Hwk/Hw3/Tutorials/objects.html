@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Creating Javascript Objects</h1>
+
+<h2>Using an object literal</h2>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+
+<script>
+
+// Create an Object:
+const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+// Display Data from the Object:
+document.getElementById("demo1").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+
+</script>
+
+<h2>Using the new keyword</h2>
+
+<script>
+
+// Create an Object
+const person1 = new Object();
+
+// Add Properties
+person1.firstName = "Doe";
+person1.lastName = "Peterson";
+person1.age = 43;
+person1.eyeColor = "brown";
+
+document.getElementById("demo2").innerHTML =
+person1.firstName + " is " + person1.age + " years old.";
+
+</script>
+
+</body>
+</html>
