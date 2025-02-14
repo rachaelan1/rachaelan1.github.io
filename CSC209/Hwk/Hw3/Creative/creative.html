@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+  margin: 0;
+  background-color:powderblue;
+  overflow-y: scroll;
+  position:relative;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+button {
+    background-color: lightsteelblue; /* Green background */
+    color: black; /* White text */
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    font-family:verdana;
+}
+button:hover {
+    background-color: steelblue; /* Darker green on hover */
+}
+
+.center {
+    text-align: center;
+}
+
+ol {
+    font-family:verdana;
+}
+
+#myProgress1, #myProgress2, #myProgress3, #myProgress4, #myProgress5, #myProgress6, #myProgress7, #myProgress8, #myProgress9 {
+  width: 80%;
+  background-color: #ddd;
+}
+
+#myBar1, #myBar2, #myBar3, #myBar4, #myBar5, #myBar6, #myBar7, #myBar8, #myBar9 {
+  width: 1%;
+  height: 30px;
+  background-color: steelblue;
+}
+
+.task-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    gap: 20px; /* Adds spacing between elements */
+    margin-bottom:15px;
+}
+
+</style>
+</head>
+
+<body>
+    <div class="header" style="font-family:verdana;">
+        <h1>Task Tracker</h1>
+        <p>Rachael An</p>
+        <p>Time spent: 1 hr 30 min</p>
+    </div>
+
+    <h2 style="font-family:verdana;text-align:center;color:steelblue;">Welcome!</h2>
+    <h3 style="font-family:verdana;text-align:center">Today's Time and Greeting Bar</h2>
+
+    <h4 id="timeGreeting"></h4>
+    <img id="imageTime" width="300" height="250">
+    <h4 id="dayWeek"></h4>
+
+    <div class="center">
+        <button onclick="document.getElementById('time').innerHTML=Date()">What's The Time?</button>
+    </div>
+
+    <h4 id="time" style="font-family:verdana;text-align:center;"></h4>
+
+    <h2 style="font-family:verdana;text-align:center;color:steelblue;">Daily Morning Routine Tasks</h2>
+    <h3 style="font-family:verdana;text-align:center;color:steelblue;">Instructions: As you complete each task, click on the 'Done' button next to each task to mark it as completed.</h3>
+
+    <ol>
+        <div class="task-container">
+            <li>Brush Teeth</li>
+            <div id="myProgress1">
+                <div id="myBar1"></div>
+            </div>
+            <button onclick="move('myBar1')">Done!</button>
+        </div>
+
+        <div class="task-container">
+            <li>Take Shower</li>
+            <div id="myProgress2">
+                <div id="myBar2"></div>
+            </div>
+            <button onclick="move('myBar2')">Done!</button>
+        </div>
+
+        <div class="task-container">
+            <li>Make Bed</li>
+            <div id="myProgress3">
+                <div id="myBar3"></div>
+            </div>
+            <button onclick="move('myBar3')">Done!</button>
+        </div>
+
+        <div class="task-container">
+            <li>Take Vitamins</li>
+            <div id="myProgress4">
+                <div id="myBar4"></div>
+            </div>
+            <button onclick="move('myBar4')">Done!</button>
+        </div>
+
+        <div class="task-container">
+            <li>Eat Breakfast</li>
+            <div id="myProgress5">
+                <div id="myBar5"></div>
+            </div>
+            <button onclick="move('myBar5')">Done!</button>
+        </div>
+
+        <div class="task-container">
+            <li>Exercise</li>
+            <div id="myProgress6">
+                <div id="myBar6"></div>
+            </div>
+            <button onclick="move('myBar6')">Done!</button>
+        </div>
+
+        <div class="task-container">
+            <li>Check Emails</li>
+            <div id="myProgress7">
+                <div id="myBar7"></div>
+            </div>
+            <button onclick="move('myBar7')">Done!</button>
+        </div>
+
+        <div class="task-container">
+            <li>Get Ready for School</li>
+            <div id="myProgress8">
+                <div id="myBar8"></div>
+            </div>
+            <button onclick="move('myBar8')">Done!</button>
+        </div>
+        
+        <div class="task-container">
+            <li>Go to Class</li>
+            <div id="myProgress9">
+                <div id="myBar9"></div>
+            </div>
+            <button onclick="move('myBar9')">Done!</button>
+        </div>
+    </ol>
+
+    <script>
+        let day;
+
+        const dayOfWeek = new Date().getDay();
+        const daysUntilWeekend = dayOfWeek === 6 ? 0 : 6 - dayOfWeek;
+
+        switch (new Date().getDay()) {
+            case 0:
+                day = "Sunday";
+
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case  6:
+                day = "Saturday";
+        }
+        document.getElementById("dayWeek").innerHTML = "Today is " + day + '. There are ' + daysUntilWeekend + ' day(s) until the weekend! Keep pushing!';
+        document.getElementById("dayWeek").style.fontFamily = "verdana"; 
+        document.getElementById("dayWeek").style.textAlign = "center"; 
+
+        const time = new Date().getHours();
+        let greeting;
+        if (time < 10) {
+            greeting = "Good Morning!";
+            imageSrc = "images/sunrise.jpg";
+        } else if (time < 17) {
+            greeting = "Good Afternoon!";
+            imageSrc = "images/afternoon.jpg";
+        } else {
+            greeting = "Good Evening!";
+            imageSrc = "images/evening.jpg";
+        }
+        document.getElementById("imageTime").src = imageSrc;
+        document.getElementById("imageTime").style.display = "block";
+        document.getElementById("imageTime").style.margin = "0 auto";
+
+        document.getElementById("timeGreeting").innerHTML = greeting;
+        document.getElementById("timeGreeting").style.fontFamily = "verdana"; 
+        document.getElementById("timeGreeting").style.textAlign = "center";
+        
+        var i = 0;
+        /*function move() {
+            if (i == 0) {
+                i = 1;
+                var elem = document.getElementById("myBar");
+                var width = 1;
+                var id = setInterval(frame, 10);
+                function frame() {
+                    if (width >= 100) {
+                        clearInterval(id);
+                        i = 0;
+                    } else {
+                    width++;
+                    elem.style.width = width + "%";
+                    }
+                }
+            }
+        } */
+        
+        function move(barId) {
+            let elem = document.getElementById(barId);
+            let width = 0;
+            let interval = setInterval(frame, 30);
+    
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(interval);
+            } else {
+                width++;
+                elem.style.width = width + "%";
+            }
+            }
+        }
+    </script>
+
+</body>
