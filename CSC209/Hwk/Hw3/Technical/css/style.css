@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+}
+  
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: powderblue;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    font-family: verdana;
+    font-size: 100%;
+}
+  
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: verdana;
+    font-size: 100%;
+}
+  
+li:nth-child(3) {
+    border-bottom: 2px solid black; /* Creates a separator */
+    padding-bottom: 5px; /* Adds spacing */
+}
+
+li:nth-child(8) {
+    border-bottom: 2px solid black; /* Creates a separator */
+    padding-bottom: 5px; /* Adds spacing */
+}
+  
+li a:active {
+    background-color: lightsteelblue;
+    color: white;
+}
+  
+li a:hover:not(.active) {
+    background-color: cadetblue;
+    color: white;
+}
+  
+div {
+      margin-left:25%;
+      padding:1px 16px;
+      height:1000px;
+      font-family:verdana;
+      text-align:center;
+}
+
+button {
+    font-family:verdana; 
+    font-size:100%;   
+}
+
+table {
+    margin: auto; /* Centers the table */
+    border-collapse: collapse;
+    width: 60%; /* Adjust width as needed */
+}
+
+/* Center the text inside table cells */
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center; /* Centers text */
+    vertical-align: middle; /* Centers vertically */
+}
+
+/* Optional: Style the table header */
+th {
+    background-color: gold;
+}
+
+#myHeader {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding:10px;
+    border: 6px dashed black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #003366;
+} 
