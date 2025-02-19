@@ -8,7 +8,8 @@ img {
     vertical-align:middle;
     text-align:center;
     display:block;
-    margin-left:0%;
+    margin-left:-40%;
+    margin-top:40%;
 }
 
 /* Slideshow container */
@@ -23,11 +24,12 @@ img {
 .prev, .next {
   cursor: pointer;
   position: absolute;
+  z-index:10;
   top: 20%;
   width: auto;
   padding: 16px;
-  margin-top: 3%;
-  margin-left: -30%;
+  margin-top: 30%;
+  margin-left: -57%;
   color: black;
   font-weight: bold;
   font-size: 18px;
@@ -40,7 +42,7 @@ img {
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
-  margin-right:-4%;
+  margin-right:25%;
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -51,15 +53,15 @@ img {
 /* Caption text */
 .text {
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
   width: 100%;
   text-align: center;
   font-family:verdana;
-  margin-left: -15%;
-  margin-bottom:-45%;
+  margin-left: -42%;
+  margin-bottom:-73%;
   font-weight:bold;
 }
 
@@ -71,7 +73,7 @@ img {
   position: absolute;
   top: 0;
   font-family:verdana;
-  margin-left:0px;
+  margin-left:30px;
   font-weight:bold;
 }
 

@@ -24,14 +24,14 @@
         
         <div>
             <br>
-            <img src="images/smithCollegeLogo.png" alt="Smith College Logo" width=600px>    
+            <img src="images/smithCollegeLogo.png" alt="Smith College Logo" width=600px style="display: block; margin: auto;">    
             <h2 id="myHeader">SDS 236 - Data Journalism</h2>
             <h3>Spring 2025</h3>
 
             <button type="button" onclick="toggleText()" id="toggleButton" style="margin-bottom: 20px;">Read Me!</button>
             <br>
     
-            <p id="demo" style="display: none;">Time spent: 4 hrs</p> <!-- Initially hidden -->
+            <p id="demo" style="display: none;">Time spent: 4 hrs 30 min</p> <!-- Initially hidden -->
         
             <script>
                 function toggleText() { 
@@ -84,7 +84,7 @@
             </tr>
             </table>
 
-            <button type="button" onclick="toggleMode()" id="modeButton" style="margin-top: 20px;">Toggle Dark Mode</button>
+            <button type="button" onclick="toggleMode()" id="modeButton" style="margin-top: 20px;position:relative;z-index:10;">Toggle Dark Mode</button>
 
             <script>
                 function toggleMode() { 
@@ -104,47 +104,25 @@
                 }
             </script>
 
+            <body onload="createSlideshow()">
+
+                <div class="slideshow-container" id="slideshow" style="margin-top: -200px;">
+                    <script src="js/script.js"></script>
+
+                <a class="prev" onclick="plusSlides(-1)">&lt;</a>
+                <a class="next" onclick="plusSlides(1)">&gt;</a>
+
+                </div>
+
+                <div style="text-align:center; margin-top: -20%; margin-left: 4%;">
+                    <span class="dot" onclick="currentSlide(1)"></span> 
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                </div>
+
+                <script src="js/script.js" defer></script>
+
         </div>
-
-        <body onload="createSlideshow()">
-
-            <div class="slideshow-container" id="slideshow" style="margin-top: -200px;">
-                <script src="js/script.js"></script>
-                 
-            <!--
-            <div class="mySlides fade">
-                <div class="numbertext">1 / 3</div>
-                <img src="images/pig1.jpg" style="width:100%">
-                <div class="text">Baby Pig Eating Grass</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext">2 / 3</div>
-                <img src="images/pig2.jpg" style="width:100%">
-                <div class="text">Pig Looking Through a Fence</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
-                <img src="images/pig3.jpg" style="width:100%">
-                <div class="text">White Pig with Black Spots Standing on Rocks</div>
-            </div>
-            -->
-                <!--<div id='slideshow'></div>-->
-            <!--<script src="js/script.js"></script>-->
-
-            <a class="prev" onclick="plusSlides(-1)">&lt;</a>
-            <a class="next" onclick="plusSlides(1)">&gt;</a>
-
-            </div>
-
-            <div style="text-align:center; margin-top: -27%;">
-                <span class="dot" onclick="currentSlide(1)"></span> 
-                <span class="dot" onclick="currentSlide(2)"></span> 
-                <span class="dot" onclick="currentSlide(3)"></span> 
-            </div>
-
-            <script src="js/script.js" defer></script>
 
 <!--
         <script>
