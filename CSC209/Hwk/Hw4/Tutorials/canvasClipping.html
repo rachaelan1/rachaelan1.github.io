@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>HTML5 Canvas clip()</h1>
+
+<div style="display:none;">
+<img id="scream" width="220" height="277" src="images/pic_the_scream.jpg">
+</div>
+
+<canvas id="myCanvas" width="220" height="277" style="border:1px solid grey;">
+Sorry, your browser does not support canvas.
+</canvas>
+
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+const image = document.getElementById("scream");
+
+image.addEventListener("load", (e) => {
+  // Create a circular clipping region
+  ctx.beginPath();
+  ctx.arc(110, 145, 75, 0, Math.PI * 2);
+  ctx.clip();
+  // Draw image onto canvas
+  ctx.drawImage(image, 0, 0);
+});
+</script>
+
+</body>
+</html>

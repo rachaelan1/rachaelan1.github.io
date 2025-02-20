@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<label for="colorPicker">Choose text color:</label>
+<input type="color" id="colorPicker">
+
+<p id="intro">Hello! My name is Rachael!</p>
+
+<br>
+
+<p>Check the box to show the image:</p>
+
+<input type="checkbox" id="toggleCheckbox">
+<img id="image" src="images/bunny.jpg" alt="Your Image" style="display: none; width: 200px; height: auto;">
+
+<br>
+
+<label for="sizeSlider">Adjust text size:</label>
+<input type="range" id="sizeSlider" min="10" max="50" value="16">
+
+<p id="caption" style="font-size: 16px;">Caption: White Bunny</p>
+
+<script>
+document.getElementById("toggleCheckbox").addEventListener("change", function() {
+    var img = document.getElementById("image");
+    img.style.display = this.checked ? "block" : "none";
+});
+
+document.getElementById("colorPicker").addEventListener("change", function() {
+    var intro = document.getElementById("intro");
+    intro.style.color = this.value;
+})
+
+document.getElementById("sizeSlider").addEventListener("input", function() {
+    var caption = document.getElementById("caption");
+    caption.style.fontSize = this.value + "px";
+});
+</script>
+
+</body>
+</html>
