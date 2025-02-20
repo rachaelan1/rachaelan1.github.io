@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/stylesLevel1.css">
+    </head>
+    <body>
+        <label for="redSpeed">Red square speed</label>
+        <select id="redSpeed">
+            <option value=30>Slow</option>
+            <option value=20>Medium</option>
+            <option value=10>Fast</option>
+        </select>
+        <button id="moveRedBtn">Move red square</button> <br><br>  
+    
+        <label for="blueSpeed">Blue square speed</label>
+        <select id="blueSpeed">
+            <option value=30>Slow</option>
+            <option value=20>Medium</option>
+            <option value=10>Fast</option>
+        </select>
+        <button id="moveBlueBtn">Move blue square</button> <br><br>  
+
+        <div id ="myContainer">
+            <div id ="blueSq"></div>
+            <div id ="redSq"></div>
+        </div>
+
+        <script src="js/animationLevel1.js"></script>
+    </body>
+</html>
