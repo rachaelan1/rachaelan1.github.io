@@ -8,25 +8,23 @@ function createShapes() {
     // Loop to create the squares
     for (let i = 0; i < numSquares; i++) {
         // Create a div element for each square
-        const square = document.createElement('div');
+        const image = document.createElement('img');
     
-        // Add the 'square' and 'blue' class to each square (for a common color)
-        square.classList.add('square', 'blue');
+        image.src = 'images/frog.png'
 
         // Randomly generate the top and left positions
         const topPos = Math.floor(Math.random() * 350) + 'px'; // Random position between 0 and 350
         const leftPos = Math.floor(Math.random() * 350) + 'px'; // Random position between 0 and 350
                 
         // Set the random top and left positions
-        square.style.top = topPos;
-        square.style.left = leftPos;
-        square.style.width = "50px";
-        square.style.height = "50px";
-        square.style.position = 'absolute';
-        square.style.backgroundColor = 'blue';
+        image.style.top = topPos;
+        image.style.left = leftPos;
+        image.style.width = "50px";
+        image.style.height = "50px";
+        image.style.position = 'absolute';
     
         // Append the square to the container
-        container.appendChild(square);
+        container.appendChild(image);
     }
 }
 
@@ -35,7 +33,7 @@ document.getElementById("startAnimationBtn").addEventListener("click", function(
 });
 
 function moveSquares() {
-    let squares = document.querySelectorAll(".square");
+    let squares = document.querySelectorAll("#myContainer img");
     let speed = parseInt(document.getElementById("squareSpeed").value);
 
     squares.forEach(square => {
