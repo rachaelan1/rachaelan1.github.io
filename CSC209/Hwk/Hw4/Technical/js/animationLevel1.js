@@ -1,5 +1,5 @@
 document.getElementById("moveRedBtn").addEventListener("click", function() {
-    moveRed(); // Calls the moveRed() function when the button is clicked
+    moveRed();
 });
 
 // function to trigger the movement of the red square
@@ -35,7 +35,7 @@ function moveRed()
 }
 
 document.getElementById("moveBlueBtn").addEventListener("click", function() {
-    moveBlue(); // Calls the moveBlue() function when the button is clicked
+    moveBlue();
 });
 
 // function to trigger the movement of the blue square 
