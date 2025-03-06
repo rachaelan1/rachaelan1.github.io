@@ -1,0 +1,84 @@
+class CircleAnimation {
+    constructor(canvasId) {
+        this.canvas = document.getElementById(canvasId);
+        this.ctx = this.canvas.getContext("2d");
+        this.colors = ['blue', 'green', 'purple'];
+        this.NRPTS = 3;
+        this.NRSTEPS = 100;
+        this.circles = [];
+
+        this.init();
+    }
+
+    init() {
+        this.createCircles();
+        document.getElementById("randomLocations").addEventListener("click", () => this.randomizeCircles());
+        document.getElementById("startAnimation").addEventListener("click", () => this.startAnimation());
+    }
+
+    createCircles() {
+        this.circles = []; 
+
+        for (let i = 0; i < this.NRPTS; i++) {
+            this.circles.push({
+                x: Math.random() * 480 + 10,
+                y: Math.random() * 480 + 10,
+                dx: Math.random() > 0.5 ? 1 : -1,
+                dy: Math.random() > 0.5 ? 1 : -1,
+                color: this.colors[i],
+                steps: 0,
+                interval: null
+            });
+        }
+
+        this.drawCircles();
+    }
+
+    drawCircles() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+        for (let c of this.circles) {
+            this.ctx.beginPath();
+            this.ctx.arc(c.x, c.y, 10, 0, 2 * Math.PI);
+            this.ctx.strokeStyle = c.color;
+            this.ctx.stroke();
+
+            this.ctx.beginPath();
+            this.ctx.moveTo(c.x, c.y);
+            this.ctx.lineTo(c.x + c.dx * 15, c.y + c.dy * 15);
+            this.ctx.stroke();
+        }
+    }
+
+    randomizeCircles() {
+        this.circles.forEach((c) => {
+            c.x = Math.random() * 480 + 10;
+            c.y = Math.random() * 480 + 10;
+            c.dx = Math.random() > 0.5 ? 1 : -1;
+            c.dy = Math.random() > 0.5 ? 1 : -1;
+            c.steps = 0;
+        });
+
+        this.drawCircles();
+    }
+
+    startAnimation() {
+        this.circles.forEach((c) => {
+            c.interval = setInterval(() => {
+                if (c.steps < this.NRSTEPS) {
+                    c.x += c.dx;
+                    c.y += c.dy;
+
+                    c.steps++;
+                    this.drawCircles();
+                } else {
+                    clearInterval(c.interval);
+                }
+            }, 20);
+        });
+    }
+}
+
+window.onload = function () {
+    new CircleAnimation("myCanvas");
+};

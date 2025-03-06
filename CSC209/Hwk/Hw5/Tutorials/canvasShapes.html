@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>HTML5 Canvas - Draw Shapes</h1>
+
+<canvas id="myCanvas" width="200" height="125" style="border:1px solid #000000;">
+Sorry, your browser does not support canvas.
+</canvas>
+
+<script>
+// Create a canvas:
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+// Define a new path:
+ctx.beginPath();
+
+// Define a rectangle
+ctx.moveTo(20,20);
+ctx.lineTo(180,20);
+ctx.lineTo(180,100);
+ctx.lineTo(20,100);
+ctx.lineTo(20,20);
+
+// Define a triangle 
+ctx.moveTo(100,20);
+ctx.lineTo(180,100);
+ctx.lineTo(20,100);
+ctx.lineTo(100,20);
+
+// Draw it
+ctx.strokeStyle = "red";
+ctx.stroke();
+</script>
+
+</body>
+</html>
