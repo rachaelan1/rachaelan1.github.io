@@ -1,24 +1,54 @@
+/*
+Animates dogs running across grass for any selected number of dogs entered by the user
+Includes the option to generate random positions and velocities
+Includes a reset button to reset the dogs back to their last generated positions for the points and velocities
+Includes a trace checkbox option, which can be enabled/disabled by the user to show intermediate positions of all the points
+*/
+
 class CircleAnimation {
     constructor(canvasId, inputId, applyBtnId, speedSelectId) {
+        // gets the canvas element from the HTML element
         this.canvas = document.getElementById(canvasId);
         this.ctx = this.canvas.getContext("2d");
+        // gets the user selected number of points from the HTML element
         this.inputField = document.getElementById(inputId);
+        // gets the apply button element from the HTML element
         this.applyBtn = document.getElementById(applyBtnId);
+        // gets the reset button element from the HTML element
         this.resetBtn = document.getElementById("resetAnimation");
+        // gets the trace checkbox, which allows the user to enable/disable trace lines
         this.traceCheckbox = document.getElementById("traceCheckbox");
+        // number of dogs
         this.NRPTS = 10;
+        // number of steps
         this.NRSTEPS = 100;
+        // creates a new image object to load the dog image 
         this.dogImage = new Image();
+        // saves the path of the dog image
         this.dogImage.src = "images/dog.png"; 
 
+        // calls the function to set up the animation and event listeners
         this.init();
     }
 
     init() {
+        // calls the function to initialize the dogs at random positions
         this.createDogs();
+
+        // Adds an event listener to the button with ID "randomLocations":
+        // When clicked, it calls randomizeCircles(), which randomly repositions the circles.
         document.getElementById("randomLocations").addEventListener("click", () => this.randomizeDogs());
+        
+        // Adds an event listener to the button with ID "startAnimation":
+        // When clicked, it calls startAnimation(), which moves the circles step by step.
         document.getElementById("startAnimation").addEventListener("click", () => this.startAnimation());
+        
+        // Adds an event listener to the button with ID "applyPoints":
+        // When clicked, it redraws the circles with the new n number of points 
         this.applyBtn.addEventListener("click", () => this.updatePoints());
+        
+        // Adds an event listener to the "resetAnimation" button.
+        // When clicked, it calls resetAnimation(), which reverts the circles to their last positions.
         this.resetBtn.addEventListener("click", () => this.resetAnimation());
     }
 
