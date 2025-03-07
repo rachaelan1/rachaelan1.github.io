@@ -1,6 +1,15 @@
 /*
 Animates the shapes for any selected number of shapes
 Includes the option to generate random positions, velocities, and colors
+
+Uses canvas to draw the shapes
+Uses event listeners to generate random positions and velocities and start the animation when buttons are clicked
+Uses if else statements to adjust the direction of the line
+Uses an array to hold the colors for the 3 shapes
+Uses a circle array to hold the positions and velocities of the circle elements
+Uses classes to organize the code
+Uses a for loop to easily adapt the code to draw as many circles as the user specifies
+Uses setInterval to animate the circles
 */
 
 class CircleAnimation {

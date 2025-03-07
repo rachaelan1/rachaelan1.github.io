@@ -1,6 +1,12 @@
 /*
 This class draws 3 different pairs of a circle and a line marked with different colors
 It includes a "generate random locations" button to generate random locations for the shapes on the canvas
+
+Uses canvas to draw the shapes
+Uses event listeners to generate random positions and velocities when a button is clicked
+Uses if else statements to adjust the direction of the line
+Uses an array to hold the colors for the 3 shapes
+Uses classes to organize the code
 */
 
 class CircleAnimation {

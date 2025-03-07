@@ -1,5 +1,6 @@
 /*
 This class draws a circle and line on a canvas
+Uses canvas and classes to draw the elements 
 */
 
 class CircleAnimation {

@@ -1,5 +1,8 @@
 /*
 This class draws 3 pairs of a circle and a line marked with different colors 
+
+Uses multiple 2D canvas contexts to draw 3 pairs
+Uses classes to organize the code
 */
 
 class CircleAnimation {

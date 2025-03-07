@@ -3,6 +3,23 @@ Animates dogs running across grass for any selected number of dogs entered by th
 Includes the option to generate random positions and velocities
 Includes a reset button to reset the dogs back to their last generated positions for the points and velocities
 Includes a trace checkbox option, which can be enabled/disabled by the user to show intermediate positions of all the points
+
+Uses canvas to draw the shapes
+Uses event listeners to generate random positions and velocities
+and start the animation and 
+and change the number of points 
+and reset the animation when buttons are clicked
+
+Uses if else statements to adjust the direction of the line
+Uses an array to hold the colors for the 3 shapes
+Uses a circle array to hold the positions and velocities of the circle elements
+Uses classes to organize the code
+Uses a for loop to easily adapt the code to draw as many circles as the user specifies
+Uses setInterval to animate the circles
+Uses canvas to redraw and record the circle at every position (trace)
+Uses an array to hold the last recorded positions of the points
+Uses the canvas drawImage() function to add images of dogs
+Uses if else statements to change directions when the shape hits the wall
 */
 
 class CircleAnimation {

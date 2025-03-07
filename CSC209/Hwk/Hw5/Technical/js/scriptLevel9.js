@@ -3,6 +3,20 @@ Animates the shapes for any selected number of shapes entered by the user
 Includes the option to generate random positions, velocities, and colors
 Includes a reset button to reset the circles back to their last generated positions for the points and velocities
 Includes a trace checkbox option, which can be enabled/disabled by the user to show intermediate positions of all the points
+
+Uses canvas to draw the shapes
+Uses event listeners to generate random positions and velocities
+and start the animation and 
+and change the number of points 
+and reset the animation when buttons are clicked
+
+Uses if else statements to adjust the direction of the line
+Uses an array to hold the colors for the 3 shapes
+Uses a circle array to hold the positions and velocities of the circle elements
+Uses classes to organize the code
+Uses a for loop to easily adapt the code to draw as many circles as the user specifies
+Uses setInterval to animate the circles
+Uses canvas to redraw and record the circle at every position (trace)
 */
 
 class CircleAnimation {
