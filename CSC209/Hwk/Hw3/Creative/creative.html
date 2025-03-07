@@ -1,3 +1,5 @@
+<!--This code creates a Task Tracker webpage with a morning routine checklist where users can mark tasks as completed by clicking a button-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,8 +8,8 @@
 body {
   margin: 0;
   background-color:powderblue;
-  overflow-y: scroll;
-  position:relative;
+  overflow-y: scroll; /* enables scrolling */
+  position:relative; /* ensures that child elements can be positioned relative to it */
 }
 
 /* Header/Blog Title */
@@ -22,7 +24,7 @@ body {
 }
 
 button {
-    background-color: lightsteelblue; /* Green background */
+    background-color: lightsteelblue; /* Blue background */
     color: black; /* White text */
     font-size: 16px;
     padding: 10px 20px;
@@ -31,23 +33,27 @@ button {
     cursor: pointer;
     font-family:verdana;
 }
+
 button:hover {
-    background-color: steelblue; /* Darker green on hover */
+    background-color: steelblue; /* Darker blue on hover */
 }
 
 .center {
     text-align: center;
 }
 
+/* Applies verdana font to ordered lists */
 ol {
     font-family:verdana;
 }
 
+/* Progress bar */
 #myProgress1, #myProgress2, #myProgress3, #myProgress4, #myProgress5, #myProgress6, #myProgress7, #myProgress8, #myProgress9 {
   width: 80%;
   background-color: #ddd;
 }
 
+/* Bars start at 1% width */
 #myBar1, #myBar2, #myBar3, #myBar4, #myBar5, #myBar6, #myBar7, #myBar8, #myBar9 {
   width: 1%;
   height: 30px;
@@ -55,16 +61,17 @@ ol {
 }
 
 .task-container {
-    display: flex;
+    display: flex; /* aligns elements horizontally */
     align-items: center; /* Aligns items vertically */
     gap: 20px; /* Adds spacing between elements */
-    margin-bottom:15px;
+    margin-bottom: 15px; /* adds spacing between elements */
 }
 
 </style>
 </head>
 
 <body>
+    <!--Header at top of page-->
     <div class="header" style="font-family:verdana;">
         <h1>Task Tracker</h1>
         <p>Rachael An</p>
@@ -74,10 +81,11 @@ ol {
     <h2 style="font-family:verdana;text-align:center;color:steelblue;">Welcome!</h2>
     <h3 style="font-family:verdana;text-align:center">Today's Time and Greeting Bar</h2>
 
-    <h4 id="timeGreeting"></h4>
-    <img id="imageTime" width="300" height="250">
-    <h4 id="dayWeek"></h4>
+    <h4 id="timeGreeting"></h4> <!--Displays good morning/good afternoon/good evening-->
+    <img id="imageTime" width="300" height="250"> <!--Displays an image based on the time of day-->
+    <h4 id="dayWeek"></h4> <!--Displays the current day and number of days until the weekend-->
 
+    <!--Clicking on the button shows the current date and time-->
     <div class="center">
         <button onclick="document.getElementById('time').innerHTML=Date()">What's The Time?</button>
     </div>
@@ -87,6 +95,7 @@ ol {
     <h2 style="font-family:verdana;text-align:center;color:steelblue;">Daily Morning Routine Tasks</h2>
     <h3 style="font-family:verdana;text-align:center;color:steelblue;">Instructions: As you complete each task, click on the 'Done' button next to each task to mark it as completed.</h3>
 
+    <!--Displays a list of daily tasks-->
     <ol>
         <div class="task-container">
             <li>Brush Teeth</li>
@@ -97,11 +106,11 @@ ol {
         </div>
 
         <div class="task-container">
-            <li>Take Shower</li>
-            <div id="myProgress2">
+            <li>Take Shower</li> <!--Task description-->
+            <div id="myProgress2"> <!--Progress bar with inner bar-->
                 <div id="myBar2"></div>
             </div>
-            <button onclick="move('myBar2')">Done!</button>
+            <button onclick="move('myBar2')">Done!</button> <!--button calls the move() function to animate the bar-->
         </div>
 
         <div class="task-container">
@@ -164,13 +173,13 @@ ol {
     <script>
         let day;
 
-        const dayOfWeek = new Date().getDay();
-        const daysUntilWeekend = dayOfWeek === 6 ? 0 : 6 - dayOfWeek;
+        const dayOfWeek = new Date().getDay(); // gets current day of the week as a number 
+        const daysUntilWeekend = dayOfWeek === 6 ? 0 : 6 - dayOfWeek; // calculates days until the weekend
 
+        // determines the day name 
         switch (new Date().getDay()) {
             case 0:
                 day = "Sunday";
-
                 break;
             case 1:
                 day = "Monday";
@@ -190,10 +199,12 @@ ol {
             case  6:
                 day = "Saturday";
         }
+        // updates the day and weekend countdown
         document.getElementById("dayWeek").innerHTML = "Today is " + day + '. There are ' + daysUntilWeekend + ' day(s) until the weekend! Keep pushing!';
         document.getElementById("dayWeek").style.fontFamily = "verdana"; 
         document.getElementById("dayWeek").style.textAlign = "center"; 
 
+        // determines greeting and image based on current time
         const time = new Date().getHours();
         let greeting;
         if (time < 13) {
@@ -206,6 +217,7 @@ ol {
             greeting = "Good Evening!";
             imageSrc = "images/evening.jpg";
         }
+        // updates greeting text and image
         document.getElementById("imageTime").src = imageSrc;
         document.getElementById("imageTime").style.display = "block";
         document.getElementById("imageTime").style.margin = "0 auto";
@@ -215,30 +227,17 @@ ol {
         document.getElementById("timeGreeting").style.textAlign = "center";
         
         var i = 0;
-        /*function move() {
-            if (i == 0) {
-                i = 1;
-                var elem = document.getElementById("myBar");
-                var width = 1;
-                var id = setInterval(frame, 10);
-                function frame() {
-                    if (width >= 100) {
-                        clearInterval(id);
-                        i = 0;
-                    } else {
-                    width++;
-                    elem.style.width = width + "%";
-                    }
-                }
-            }
-        } */
         
+        // Animates progress bars when a task is marked as done
         function move(barId) {
             let elem = document.getElementById(barId);
+            // set initial width to 0
             let width = 0;
+            // moves the bar by 1% every 30 milliseconds
             let interval = setInterval(frame, 30);
     
             function frame() {
+                // stops the animation when the width exceeds 100
                 if (width >= 100) {
                     clearInterval(interval);
             } else {
