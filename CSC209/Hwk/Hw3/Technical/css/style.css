@@ -19,8 +19,8 @@ ul {
 /*Sidebar links*/
 li a {
     display: block; /*makes the links take up the full width of the sidebar*/
-    color: #000; /*adds spacing around the links*/
-    padding: 8px 16px;
+    color: #000; 
+    padding: 8px 16px; /*adds spacing around the links*/
     text-decoration: none; /*removes the default underline*/
     font-family: verdana;
     font-size: 100%;
