@@ -1,5 +1,7 @@
 /*
 This javascript moves a red and blue square diagonally across a canvas in opposite directions, with options to control speed
+Uses event listeners to trigger the movement of the squares when the 'move red button' or the 'move blue button' is clicked
+Uses setInterval to animate the squares
 */
 
 // event listener for the button to move the red square

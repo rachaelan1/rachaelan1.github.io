@@ -1,4 +1,9 @@
-
+/*
+Uses HTML DOM to create slideshow elements, including the slide numbers, images, and captions
+Uses javascript functions to run the arrows and dots, and extra features to make only current dots active
+*/
+        
+        
         let slideIndex = 1; // keeps track of the current slide being displayed
 
         // Array of image URLs

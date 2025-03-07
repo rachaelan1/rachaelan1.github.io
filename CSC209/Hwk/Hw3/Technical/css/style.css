@@ -1,3 +1,5 @@
+/* Uses CSS styling to format the table, sidebar navigation, buttons, and header */
+
 body {
     margin: 0; /*removes the default margin from the body*/
 }

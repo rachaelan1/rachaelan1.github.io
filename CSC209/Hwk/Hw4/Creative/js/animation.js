@@ -1,5 +1,8 @@
 /*
 This javascript randomly moves the positions of 5 frogs across the "pond", with options to control the speed of the frogs
+Uses event listeners to trigger the movement of the squares when the 'move squares' is clicked
+Uses setInterval to animate the squares
+Uses HTML dom to create the specified number of squares and assign them attributes 
 */
 
 // initializes an empty array named squares that will hold objects representing each square along with its properties

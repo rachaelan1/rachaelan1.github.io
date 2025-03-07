@@ -1,3 +1,5 @@
+/* Uses CSS Styling to format the elements of the slideshow */
+
 * {box-sizing:border-box} /*ensures that padding and borders do not increase ALL of the elements width/height*/
 
 .mySlides {

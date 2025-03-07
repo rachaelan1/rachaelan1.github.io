@@ -1,3 +1,5 @@
+/* Uses CSS styling to change the page to dark mode */
+
 .dark-mode {
     background-color: black;
     color: white;
