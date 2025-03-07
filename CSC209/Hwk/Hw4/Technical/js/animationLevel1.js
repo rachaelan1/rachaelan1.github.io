@@ -1,3 +1,8 @@
+/*
+This javascript moves a red and blue square diagonally across a canvas in opposite directions, with options to control speed
+*/
+
+// event listener for the button to move the red square
 document.getElementById("moveRedBtn").addEventListener("click", function() {
     moveRed();
 });
@@ -34,6 +39,7 @@ function moveRed()
     }
 }
 
+// event listener for the button to move the blue square
 document.getElementById("moveBlueBtn").addEventListener("click", function() {
     moveBlue();
 });
