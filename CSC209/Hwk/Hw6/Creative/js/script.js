@@ -1,5 +1,13 @@
 /*
 The Game of Life
+
+Uses classes to organize the code
+Uses a 2D array labeled with 0 or 1 to store the alive and dead cells in the grid
+Uses event listeners to show the next generation, change the grid size, and select a pre-defined pattern
+Uses event listeners to display the pattern once it is selected by the user and to reset it to its original position
+Uses if else statements to draw different patterns depending on the pattern selected by the user
+Uses a for loop to loop through each element of the 2D array and fill it with black or white depending on its status
+Dynamically updates the life status of the cell in the array depending on the number of neighbors
 */
 
 class GameGrid {
