@@ -69,7 +69,7 @@ function moveSquares() {
             clearInterval(element.dataset.intervalId);
         }
 
-        // moves the square by one step every 20 milliseconds
+        // moves the square by one step at the speed specified by the user
         let stepId = setInterval(() => {
             // stops the animation when the square reaches the boundary of the canvas
             if (squareObj.posX == 0 || squareObj.posX == 350 || squareObj.posY == 0 || squareObj.posY == 350) {
