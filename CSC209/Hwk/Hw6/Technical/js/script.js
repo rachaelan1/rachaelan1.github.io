@@ -9,6 +9,7 @@ Uses a for loop to loop through each element of the 2D array and fill it with bl
 Dynamically updates the life status of the cell in the array depending on the number of neighbors
 */
 
+(function() {
 class GameGrid {
     // constructor initializes the grid 
     constructor(canvasId, rows, cols, cellSize) {
@@ -226,3 +227,4 @@ const gameGrid = new GameGrid("gameCanvas", 20, 20, 20);
 
 // initializes the game 
 gameGrid.init();
+})();
