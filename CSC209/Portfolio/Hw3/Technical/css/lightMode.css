@@ -1,0 +1,6 @@
+/* Uses CSS styling to change the page to light mode */
+
+.light-mode {
+    background-color: white;
+    color: black;
+}

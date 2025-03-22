@@ -1,0 +1,340 @@
+<!--Entry page to a collection of photos comprising my memories of Spain-->
+<!--Uses dropdown elements to present pages for cities and image slideshow-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box; /*ensures that padding and borders do not increase an element’s width*/
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+  background-image: url('images/wallpaper.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* does not scroll */ 
+  background-size: cover; /* ensure the image covers the header */
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden; /* prevents overflow */
+  background-color: powderblue;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left; /* align them to the left */
+  display: block; /* makes them clickable */
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; /* removes underline */
+}
+
+/* Hover effects */
+.topnav a:hover:not(.active) {
+  background-color: cadetblue;
+  color: white;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size:100%;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: cadetblue;
+}
+
+.dropdown-content {
+  display: none; /* hidden by default */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* adds a box shadow */
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Hover effects over a dropdown item */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Makes the dropdown content visible when hovering over the menu */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative; /*The element is positioned relative to its normal position*/
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute; /* element is positioned relative to its first positioned (not static) ancestor element */
+  top: 50%; /*places them 50% down from the top of the container*/
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0; /*rounds the right side of the button*/
+  user-select: none; /* prevents text selection */
+}
+
+/* Position the "next button" to the right of the slideshow */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px; /*rounds the left side of the button*/
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute; /*The element is positioned relative to its first positioned (not static) ancestor element*/
+  bottom: 8px; /*moves it 8px from the bottom*/
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute; /*The element is positioned relative to its first positioned (not static) ancestor element*/
+  top: 0; /* moves it to the top */
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px; /*adds space between them*/
+  background-color: #bbb;
+  border-radius: 50%; /* makes them circular */
+  display: inline-block; /*allows them to be side by side*/
+  transition: background-color 0.6s ease;
+}
+
+/* sets the color of the currently selected dot and when it is hovered over */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation when switching slides */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+</style>
+</head>
+<body>
+
+<div class="header" style="font-family:verdana;">
+  <h1>Spain</h1>
+  <p>My Memories</p>
+  <p>Time spent: 3 hrs 30 min</p>
+</div>
+
+<!--dropdown for cities-->
+<div class="topnav" style="font-size:150%;text-align:center;font-family:verdana;">
+    <div class="dropdown">
+        <button class="dropbtn">Cities
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="madrid.html">Madrid</a>
+            <a href="seville.html">Seville</a>
+            <a href="barcelona.html">Barcelona</a>
+        </div>
+    </div> 
+</div>
+
+<!--slideshow with pictures of Spain -->
+<div class="row">
+<div class="slideshow-container" style="margin-top: 40px;">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 5</div> <!--slide number-->
+          <img src="images/royalPalaceMadrid.jpg" style="width:100%">
+          <div class="text">Royal Palace of Madrid</div> <!-- slide caption -->
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 5</div>
+          <img src="images/toledo.jpg" style="width:100%">
+          <div class="text">Toledo</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 5</div>
+          <img src="images/alhambra.jpg" style="width:100%">
+          <div class="text">Alhambra</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 5</div>
+            <img src="images/plazaDeEspana.jpg" style="width:100%">
+            <div class="text">Plaza de Espana</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 5</div>
+            <img src="images/casaBatllo.jpg" style="width:100%">
+            <div class="text">Casa Batllo</div>
+        </div>
+        
+        <!--previous and next arrows to switch slides-->
+        <a class="prev" onclick="plusSlides(-1)">&lt;</a>
+        <a class="next" onclick="plusSlides(1)">&gt;</a>
+        
+</div>
+        <br>
+        
+        <!--dots to switch between slides-->
+<div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+          <span class="dot" onclick="currentSlide(4)"></span> 
+          <span class="dot" onclick="currentSlide(5)"></span> 
+</div>
+        
+<script>
+        let slideIndex = 1; // keeps track of the current slide being displayed
+        showSlides(slideIndex); // calls the function to display the first slide
+        
+        // This function is called when the next or previous buttons are clicked
+        // It increases or decreases slideIndex and updates the display
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        // Dot navigation
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides"); // selects all slides
+          let dots = document.getElementsByClassName("dot"); // selects all dots
+          
+          // If n is greater than the total slides, wrap around to slideIndex = 1;.
+          if (n > slides.length) {slideIndex = 1}    
+          
+          // If n is less than 1, loop back to the last slide.
+          if (n < 1) {slideIndex = slides.length}
+
+          // hides all slides by setting display = none
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+
+          // removes the active class from all dots
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+
+          // makes only the current dot active 
+          slides[slideIndex-1].style.display = "block"; 
+          
+          // displays only the current slide
+          dots[slideIndex-1].className += " active";
+        }
+</script>
+</div>
+
+</body>
+</html>
+
+

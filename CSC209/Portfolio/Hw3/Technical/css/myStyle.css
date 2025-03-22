@@ -1,0 +1,104 @@
+/* Uses CSS Styling to format the elements of the slideshow */
+
+* {box-sizing:border-box} /*ensures that padding and borders do not increase ALL of the elements width/height*/
+
+.mySlides {
+    display: none; /*hides all slides initially*/
+}
+
+img {
+    vertical-align:middle;
+    text-align:center;
+    display:block; /*removes inline spacing issues*/
+    margin-left:-40%; /*moves the image left by 40% of its container's width*/
+    margin-top:40%; /*moves the image down by 40% of its container's height*/
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative; /*allows absolute-positioned child elements to be placed relative to this container*/
+  margin-left: 26%; /*shifts the slideshow to the right by 26%*/
+}
+
+/* Left and right navigation buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute; /*places them on top of the slideshow*/
+  z-index:10; /*ensures they appear above other elements*/
+  top: 20%; /*places them 20% down from the top of the container*/
+  width: auto; /*allows them to resize based on content*/
+  padding: 16px; /*increases clickable area*/
+  margin-top: 30%; /*moves them down*/
+  margin-left: -57%; /*moves them to the left*/
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease; /*makes hover effects smooth*/
+  border-radius: 0 3px 3px 0; /*rounds the right side of the button*/
+  user-select: none; /*prevents text selection*/
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0; /*positions it to the right of the slideshow*/
+  border-radius: 3px 0 0 3px; /*rounds the left side of the button*/
+  margin-right:25%; /*moves it further left*/
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8); 
+}
+
+/* Caption text */
+.text {
+  color: white;
+  font-size: 18px;
+  padding: 8px 12px; /*adds spacing inside the text box*/
+  position: absolute; /*places it over the image*/
+  bottom: 8px; /*moves it 8px from the bottom*/
+  width: 100%;
+  text-align: center;
+  font-family:verdana;
+  margin-left: -42%; /*moves it to the left*/
+  margin-bottom:-73%; /* moves it lower */
+  font-weight:bold;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px; /*adds spacing*/
+  position: absolute; /*places it in the slide*/
+  top: 0; /*moves it to the top*/
+  font-family:verdana;
+  margin-left:30px; /*moves it slightly right*/
+  font-weight:bold;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px; /*makes them small circles*/
+  width: 15px; /*makes them small circles*/
+  margin: 0 2px; /*adds space between them*/
+  background-color: #bbb;
+  border-radius: 50%; /*makes them circular*/
+  display: inline-block; /*allows them to be side by side*/
+  transition: background-color 0.6s ease;
+  position:relative; /*positions them in the slideshow*/
+  z-index:10; /* ensures they stay above other elements*/
+}
+
+/* sets the color of the currently selected dot and when it is hovered over */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation when switching slides */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}

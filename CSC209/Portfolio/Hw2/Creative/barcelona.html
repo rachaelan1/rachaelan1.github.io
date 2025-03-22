@@ -1,0 +1,145 @@
+<!--About Barcelona and a collection of photos from there during my trip-->
+<!--Uses image gallery to display series of photos in the same row-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+  margin: 0;
+  background-color:powderblue;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+p {
+  text-align:center;
+  font-size:130%;
+}
+
+/* adds a black border around the gallery element */
+div.gallery {
+  border: 1px solid black;
+}
+
+/* When hovered, the border color changes to a grayish color */
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+/* ensures images are at full width but have a fixed height of 300px */
+div.gallery img {
+  width: 100%;
+  height: 300px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  font-family:verdana;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left; /* allows images to appear side by side */
+  width: 24.99999%; /* each image takes up 25% of screen width */
+}
+
+/* screen is below 700px width */
+/* Changes the width to 50% so only two images appear per row */
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+/* screen is below 500px width */
+/* Changes the width to 100% so only one image appears per row */
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+/* Ensures floated elements don’t mess up the layout by clearing floats */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+</style>
+</head>
+
+<body>
+
+<!--Description of Barcelona-->
+<div class="header" style="font-family:verdana;">
+    <h1>Barcelona</h1>
+    <p>Barcelona, Spain's second-most populous city, is home to over 6.9 million residents. As a major cultural and economic hub of Europe, it has hosted the Summer Olympics and numerous international sports tournaments. The city is renowned for its architectural wonders, including Park Guell, Casa Batllo, and the Basilica de la Sagrada Familia --UNESCO World Heritage Sites --along with Casa Mila, the Arc de Triomf, and Barceloneta Beach.</p>
+</div>
+
+<div class="row" style="text-align:center;font-family:verdana;font-size:100%;margin-top:40px;">
+
+  <!--Button to go back to home page-->
+  <a href="creative.html">Back to Home</a>
+  <br>
+        <!--Gallery to show images of Barcelona with options to open the image in a new tab when clicked on-->
+        <div class="responsive">
+            <div class="gallery" style="margin-top:40px;">
+                <a target="_blank" href="images/parkGuell.jpg"> <!--Open image in new tab-->
+                <img src="images/parkGuell.jpg" alt="Park Guell" width="600" height="400"> <!--image path-->
+                </a>
+                <div class="desc">Park Guell</div> <!--Image caption-->
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery" style="margin-top:40px;">
+                <a target="_blank" href="images/sagradaFamilia.jpg">
+                <img src="images/sagradaFamilia.jpg" alt="Basilica de la Sagrada Familia" width="600" height="400">
+                </a>
+                <div class="desc">Basilica de la Sagrada Familia</div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery" style="margin-top:40px;">
+                <a target="_blank" href="images/arcDeTriomf.jpg">
+                <img src="images/arcDeTriomf.jpg" alt="Arc De Triomf" width="600" height="400">
+                </a>
+                <div class="desc">Arc De Triomf</div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery" style="margin-top:40px;">
+                <a target="_blank" href="images/barcelonetaBeach.jpg">
+                <img src="images/barcelonetaBeach.jpg" alt="Barceloneta Beach" width="600" height="400">
+                </a>
+                <div class="desc">Barceloneta Beach</div>
+            </div>
+        </div>
+
+  <!--Clears floats to avoid layout issues-->
+  <div class="clearfix"></div>
+
+</div>
+
+</body>
+</html>

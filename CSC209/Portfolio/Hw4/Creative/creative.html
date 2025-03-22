@@ -1,0 +1,27 @@
+<!--Uses dropdown menus and <div> to create containers to hold squares-->
+<!--Uses external script to load the frogs-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <p>Time spent: 30 min</p>
+
+        <label for="squareSpeed">Square Speed</label>
+        <select id="squareSpeed">
+            <option value=30>Slow</option>
+            <option value=20>Medium</option>
+            <option value=10>Fast</option>
+        </select>
+        <button id="startAnimationBtn">Start Animation</button> <br><br>  
+
+        <body onload="createShapes()">
+            <div id ="myContainer">
+                <script src="js/animation.js"></script>
+            </div>
+
+        <script src="js/animation.js"></script>
+    </body>
+</html>
