@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/beach.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px;
+    margin: 0; 
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: auto;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+p.yes {
+    color: green;
+    font-weight: bold;
+}
+
+p.no {
+    color: red;
+    font-weight: bold;
+}
+
+.login-result {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: gold;
+    font-size: 1.2em;
+    margin-top: 30px;
+}
